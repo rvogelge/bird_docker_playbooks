@@ -1,0 +1,15 @@
+---
+ - hosts: bird_docker
+   tasks:
+    - name: create Node Red Container
+      docker_container:
+          name: myNodeRed
+          image: easypi/node-red-arm
+          ports:
+          - "1880:1880"
+          - "1883:1883"
+          volumes:
+          - "/home/pi/.node-red:/root/.node-red"
+          
+
+...

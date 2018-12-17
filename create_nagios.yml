@@ -1,0 +1,10 @@
+---
+ - hosts: bird_docker
+   tasks:
+      - name: create Nagios container
+        docker_container:
+          name: myNagios
+          image: tucka/nagios-raspbian-armhf
+          ports: 
+          - "8080:80"
+...

@@ -1,0 +1,15 @@
+---
+ - hosts: bird_docker
+   tasks:
+    - name: create Owncloud Container
+      docker_container:
+          name: myOwncloud
+          image: owncloud
+          privileged: "yes"
+          restart_policy: always
+#          restart_retries: 3
+          ports:
+          - "80:80"
+          volumes:
+          - /mnt/bird_nas/owncloud:/var/www/html/data
+...

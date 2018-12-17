@@ -1,0 +1,7 @@
+---
+- hosts: bird_docker
+  tasks:
+    - name: pull an image
+      docker_image:
+        name: tucka/nagios-raspbian-armhf
+...
