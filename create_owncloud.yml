@@ -5,9 +5,8 @@
       docker_container:
           name: myOwncloud
           image: owncloud
-          privileged: "yes"
+#          priviledged: "yes"
           restart_policy: always
-#          restart_retries: 3
           ports:
           - "80:80"
           volumes:
