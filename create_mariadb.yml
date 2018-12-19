@@ -1,0 +1,19 @@
+---
+ - hosts: bird_docker
+   tasks:
+    - name: create MariaDB Container
+      docker_container:
+          name: myMariaDB
+          image: hypriot/rpi-mysql
+#          priviledged: "yes"
+          restart_policy: always
+          ports:
+          - "3306:3306"
+          env:
+            MYSQL_ROOT_PASSWORD: hirolag9
+            MYSQL_DATABASE: oc_db
+            MYSQL_USER: pi
+            MYSQL_PASSWORD: hirolag9
+          volumes:
+#          - /mnt/bird_nas/owncloud:/var/www/html/data
+...
