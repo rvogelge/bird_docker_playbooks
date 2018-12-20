@@ -1,0 +1,14 @@
+---
+  - hosts: bird_docker
+    tasks:
+    - name: create nrpe Container
+      docker_container:
+          name: myNrpe
+          image: totem/docker-nrpe
+          privileged: "yes"
+          restart_policy: always
+          ports:
+          - "5666:5666"
+          volumes:
+#          - /mnt/bird_nas/owncloud:/var/www/html/data
+...

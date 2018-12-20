@@ -1,0 +1,10 @@
+---
+ - hosts: bird_docker
+   tasks:
+      - name: create Grafana container
+        docker_container:
+          name: myGrafana
+          image: proxx/grafana-armv7
+          ports: 
+          - "3000:3000"
+...
