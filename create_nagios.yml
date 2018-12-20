@@ -4,7 +4,8 @@
       - name: create Nagios container
         docker_container:
           name: myNagios
-          image: tucka/nagios-raspbian-armhf
+#          image: tucka/nagios-raspbian-armhf
+          image: jehricon/rpi-nagios
           ports: 
           - "8080:80"
 ...

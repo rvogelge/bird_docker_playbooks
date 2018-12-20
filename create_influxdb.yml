@@ -1,0 +1,21 @@
+---
+ - hosts: bird_docker
+   tasks:
+    - name: createinfluxdb Container
+      docker_container:
+          name: myInflux
+          image: influxdb
+#          priviledged: "yes"
+          restart_policy: always
+          ports:
+          - "8086:8086"
+          - "8083:8083"
+          env:
+             INFLUXDB_ADMIN_ENABLED=true 
+#            MYSQL_ROOT_PASSWORD: hirolag9
+#            MYSQL_DATABASE: oc_db
+#            MYSQL_USER: pi
+#            MYSQL_PASSWORD: hirolag9
+          volumes:
+#          - "/home/pi/influxdb:/etc/influxdb"
+...
