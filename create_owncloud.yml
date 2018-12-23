@@ -1,5 +1,5 @@
 ---
- - hosts: bird_docker
+ - hosts: bird_docker1
    tasks:
     - name: create Owncloud Container
       docker_container:

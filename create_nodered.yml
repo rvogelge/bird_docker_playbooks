@@ -10,6 +10,15 @@
           - "1883:1883"
           volumes:
           - "/home/pi/.node-red:/root/.node-red"
-          
-
+    - name: create DHT22 container     
+      docker_container:
+          name: myDHT22
+          image: dmitrijsgribkovs/mqtt-dht22
+          ports:
+ #         - "1883:1883"
+          env:
+            host: "192.168.178.74"
+            topic: "home/office/temp"
+          privileged: "yes"
+          devices: "/dev/gpiomem"
 ...
